@@ -31,6 +31,7 @@ namespace Microsoft.Health.Fhir.Core.UnitTests.Features.Operations.Import
         [Fact]
         public async Task GivenAnOrchestratorJob_WhenProcessingInputFilesMoreThanConcurrentCount_ThenJobShouldBeCompleted()
         {
+            await VerifyCommonOrchestratorJobAsync(100, 1);
             await VerifyCommonOrchestratorJobAsync(105, 6);
         }
 
